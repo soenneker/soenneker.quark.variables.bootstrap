@@ -1,6 +1,4 @@
-using Soenneker.Quark.Attributes.CssVariables;
-
-namespace Soenneker.Quark.Variables.Bootstrap;
+namespace Soenneker.Quark;
 
 /// <summary>
 /// Bootstrap's card CSS variables

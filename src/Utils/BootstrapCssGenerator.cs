@@ -6,9 +6,8 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using Soenneker.Utils.PooledStringBuilders;
 using Soenneker.Extensions.String;
-using Soenneker.Quark.Attributes.CssVariables;
 
-namespace Soenneker.Quark.Variables.Bootstrap.Utils;
+namespace Soenneker.Quark;
 
 /// <summary>Generates Bootstrap CSS custom properties with low allocations.</summary>
 public static class BootstrapCssGenerator
@@ -43,7 +42,7 @@ public static class BootstrapCssGenerator
         return result;
     }
 
-    /// <summary>Returns a single <c>:root { … }</c> block.</summary>
+    /// <summary>Returns a single <c>:root { ï¿½ }</c> block.</summary>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static string GenerateRootCss(params object?[] cssVariablesObjects)
     {
@@ -60,7 +59,7 @@ public static class BootstrapCssGenerator
         foreach (KeyValuePair<string, string> kvp in map)
         {
             sb.Append("  ".AsSpan());
-            sb.Append(kvp.Key);                    // "--bs-…"
+            sb.Append(kvp.Key);                    // "--bs-ï¿½"
             sb.Append(": ".AsSpan());
             sb.Append(kvp.Value);                  // value
             sb.Append(";\n".AsSpan());
